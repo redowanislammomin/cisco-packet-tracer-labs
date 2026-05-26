@@ -1,11 +1,10 @@
-# 01 — Inter-VLAN Routing (Basic)
+# Inter-VLAN Routing (Basic)
 
 ### Objective
 Design and configure a network with 3 VLANs on a single switch, enable inter-VLAN routing using a Cisco router (router-on-a-stick), and apply an Access Control List (ACL) to restrict traffic between VLANs.
 
 ### Topology
-
-![Topology](screenshots/vlan1.png)
+![Topology](./screenshots/vlan1.png)
 
 ```
 Router0 (Cisco 2911)
@@ -48,16 +47,16 @@ Router0 (Cisco 2911)
 
 ![VLAN Brief](screenshots/vlan2.png)
 
-![Trunk Port](screenshots/vlan3.png)
+![Trunk Port](screenshots/trunk.png)
 
 **Router — Router-on-a-Stick (subinterfaces on Gig0/1):**
 - Gig0/1.10 → 192.168.10.1 — gateway for VLAN 10
 - Gig0/1.20 → 192.168.20.1 — gateway for VLAN 20
 - Gig0/1.30 → 192.168.30.1 — gateway for VLAN 30
 
-![Router Interfaces](screenshots/vlan4.png)
+![Router Interfaces](screenshots/router-interfaces.png)
 
-![Routing Table](screenshots/vlan5.png)
+![Routing Table](screenshots/routing-table.png)
 
 **ACL — Guest VLAN restriction:**
 ```
@@ -73,17 +72,27 @@ Applied inbound on Gig0/1.30 — blocks Guest from reaching IT, allows everythin
 ### Test Results
 | Test | From | To | Expected | Result |
 |------|------|----|----------|--------|
-| Same VLAN | PC0 (VLAN 10) | PC0 gateway | Reachable | ✅ Pass |
-| Inter-VLAN | PC0 (VLAN 10) | PC1 (VLAN 20) | Reachable | ✅ Pass |
-| Inter-VLAN | PC0 (VLAN 10) | PC2 (VLAN 30) | Reachable | ✅ Pass |
-| ACL block | PC2 (VLAN 30) | PC0 (VLAN 10) | Blocked | ✅ Pass |
-| ACL allow | PC2 (VLAN 30) | PC1 (VLAN 20) | Reachable | ✅ Pass |
+| Same VLAN | PC0 (VLAN 10) | PC0 gateway | Reachable | Pass |
+| Inter-VLAN | PC0 (VLAN 10) | PC1 (VLAN 20) | Reachable |  Pass |
+| Inter-VLAN | PC0 (VLAN 10) | PC2 (VLAN 30) | Reachable |  Pass |
+| ACL block | PC2 (VLAN 30) | PC0 (VLAN 10) | Blocked |  Pass |
+| ACL allow | PC2 (VLAN 30) | PC1 (VLAN 20) | Reachable |  Pass |
 
-![Inter-VLAN Ping Success](screenshots/vlan6.png)
+![Inter-VLAN Ping Success](screenshots/ping-intervlan-success.png)
 
-![ACL Block](screenshots/vlan7.png)
+![ACL Block](screenshots/ping-acl-blocked.png)
 
-![ACL Allow](screenshots/vlan8.png)
+![ACL Allow](screenshots/ping-acl-allowed.png)
+
+---
+
+### What I Learned
+- How VLANs segment a network at Layer 2 — devices in different VLANs cannot communicate without a Layer 3 device
+- How router-on-a-stick works — one physical interface handles multiple VLANs using subinterfaces with 802.1Q encapsulation
+- How trunk ports carry tagged traffic for multiple VLANs between a switch and router
+- How to write and apply an ACL to restrict traffic between specific subnets
+- How wildcard masks work in Cisco ACL syntax (`0.0.0.255` = entire /24 subnet)
+- Why "Gateway of last resort is not set" is normal in an isolated lab with no internet uplink
 
 ---
 
