@@ -4,5 +4,5 @@
 - [Basic-inter-vlan](inter-vlan-basic/readme.md)
 
 ### cisco command sheet
--[command](cisco-command-sheet.md)
+- [command](cisco-command-sheet.md)
 
