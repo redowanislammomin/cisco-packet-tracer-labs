@@ -4,6 +4,7 @@
 Design and configure a network with 3 VLANs on a single switch, enable inter-VLAN routing using a Cisco router (router-on-a-stick), and apply an Access Control List (ACL) to restrict traffic between VLANs.
 
 ### Topology
+
 ![Topology](screenshots/vlan1.png)
 
 ```
