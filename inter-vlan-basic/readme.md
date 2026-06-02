@@ -96,5 +96,3 @@ Applied inbound on Gig0/1.30 — blocks Guest from reaching IT, allows everythin
 - Cisco 2960 Switch CLI
 
 ---
-
-*More labs coming — see Lab 02 for a scaled-up version with 2 switches and 9 PCs across the same VLAN design.*
