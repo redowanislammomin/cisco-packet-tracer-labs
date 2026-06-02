@@ -108,4 +108,3 @@ Quick reference for all important CLI commands used in these labs.
 
 ---
 
-*This cheatsheet is based on labs built in Cisco Packet Tracer on Debian Linux.*
