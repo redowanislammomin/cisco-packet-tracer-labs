@@ -3,6 +3,21 @@
 ### inter-vlan-basic
 - [Basic-inter-vlan](inter-vlan-basic/readme.md)
 
+```
+- 1 router
+- 1 switch
+- 3 pcs
+```
+
+### inter-vlan-basic
+- [Basic-inter-vlan](vlan-multi-switch/readme.md)
+
+```
+- 1 router
+- 2 switch
+- 9 pc
+```
+
 ### cisco command sheet
 - [command](cisco-command-sheet.md)
 
