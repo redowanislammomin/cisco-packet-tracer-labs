@@ -1,7 +1,7 @@
 # cisco-packet-tracer-labs
 
-### inter-vlan-basic
-- [Basic-inter-vlan](router-to-router/readme.md)
+### router to router
+- [Router to Router](router-to-router/readme.md)
 
 ```
 - 2 router
@@ -18,7 +18,7 @@
 - 3 pcs
 ```
 
-### inter-vlan-basic
+### inter-vlan-switch
 - [Basic-inter-vlan](vlan-multi-switch/readme.md)
 
 ```
