@@ -1,7 +1,7 @@
 # cisco-packet-tracer-labs
 
 ### router to router
-- [Router to Router](router-to-router/readme.md)
+- [Router to Router](router%20to%20router/readme.md)
 
 ```
 - 2 router
