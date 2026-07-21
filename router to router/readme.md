@@ -2,7 +2,7 @@
 
 ## Topology
 
-
+![Topology](screenshots/topology.png)
 
 ```
 PC1 -- Switch1 -- Router1 -- Router2 -- Switch2 -- PC2
@@ -54,6 +54,9 @@ no ip route [destination network] [subnet mask] [next-hop IP]   -> remove static
 show ip route                                                     -> view routing table
 ping [ip]                                                         -> test connectivity
 ```
+## Testing 
+
+![ping photos](screenshots/test.png)
 
 ## Debugging order when a ping fails
 
